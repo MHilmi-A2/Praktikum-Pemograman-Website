@@ -1,0 +1,402 @@
+/* Reset Dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+/* --- SISI KIRI (Gambar) --- */
+.left-panel {
+  flex: 1;
+  background-image: url('../asset/GambarHL.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+  color: white;
+}
+
+.left-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 0;
+}
+
+.logo,
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+
+.logo img {
+  height: 60px;
+  max-width: 100px;
+  object-fit: contain;
+}
+
+.hero-text {
+  margin-bottom: 40px;
+}
+
+.tagline {
+  font-size: 14px;
+  color: #a3e635;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-text h1 .highlight {
+  color: #a3e635;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.description {
+  font-size: 1rem;
+  max-width: 400px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+/* --- SISI KANAN (Form) --- */
+.right-panel {
+  flex: 1;
+  background-color: #f7f9f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 8%;
+  position: relative;
+  overflow-y: auto; /* agar form bisa scroll jika kepanjangan */
+}
+
+.back-link {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.form-container {
+  max-width: 450px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 0 40px; /* beri ruang untuk back-link */
+}
+
+.form-container h2 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 14px 15px 14px 45px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input-wrapper input:focus {
+  border-color: #8bc34a;
+}
+
+.input-wrapper .icon {
+  position: absolute;
+  left: 15px;
+  color: #888;
+  font-size: 1.1rem;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  color: #888;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.terms input {
+  margin-top: 3px;
+  accent-color: #6c5ce7;
+  flex-shrink: 0;
+}
+
+.terms label {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 15px;
+  background-color: #8bc34a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #7cb342;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.login-link a {
+  color: #4a4a4a;
+  text-decoration: none;
+  border-bottom: 1px solid #4a4a4a;
+}
+
+.login-link a:hover {
+  color: #8bc34a;
+  border-color: #8bc34a;
+}
+
+/* --- RESPONSIVE --- */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .right-panel {
+    padding: 0 5%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  body {
+    overflow-y: auto;
+    height: auto;
+  }
+
+  .container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .left-panel {
+    height: 260px;
+    flex: none;
+    padding: 20px;
+    justify-content: flex-end;
+  }
+
+  .logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+  .logo img {
+    height: 45px;
+  }
+
+  .hero-text {
+    margin-bottom: 10px;
+  }
+
+  .tagline {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+  }
+
+  .description {
+    display: none;
+  }
+
+  .right-panel {
+    padding: 30px 20px 50px;
+    flex: none;
+  }
+
+  .back-link {
+    position: relative;
+    top: auto;
+    left: auto;
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #333;
+    order: -1;
+  }
+
+  .form-container {
+    padding: 0;
+  }
+
+  .form-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+  }
+}
+
+/* Mobile kecil */
+@media (max-width: 480px) {
+  .left-panel {
+    height: 200px;
+    padding: 15px;
+  }
+
+  .logo {
+    top: 15px;
+    left: 15px;
+  }
+
+  .logo img {
+    height: 35px;
+  }
+
+  .tagline {
+    font-size: 10px;
+  }
+
+  .hero-text h1 {
+    font-size: 1.4rem;
+  }
+
+  .right-panel {
+    padding: 25px 15px 40px;
+  }
+
+  .back-link {
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+  }
+
+  .form-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+  }
+
+  .input-group {
+    margin-bottom: 15px;
+  }
+
+  .input-group label {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+  }
+
+  .input-wrapper input {
+    padding: 12px 12px 12px 40px;
+    font-size: 0.85rem;
+  }
+
+  .input-wrapper .icon {
+    left: 12px;
+    font-size: 1rem;
+  }
+
+  .toggle-password {
+    right: 12px;
+    font-size: 1rem;
+  }
+
+  .terms label {
+    font-size: 0.75rem;
+  }
+
+  .btn-submit {
+    padding: 13px;
+    font-size: 0.9rem;
+  }
+
+  .login-link {
+    font-size: 0.8rem;
+    margin-top: 15px;
+  }
+}

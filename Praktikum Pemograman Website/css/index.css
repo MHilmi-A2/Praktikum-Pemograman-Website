@@ -1,0 +1,436 @@
+/* ===== RESET DASAR ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background-color: #f7f9f2;
+  color: #2b2b2b;
+  overflow-x: hidden; /* cegah scroll horizontal */
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #d9e8b8;
+  padding: 12px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-wrap: wrap; /* agar bisa wrap di mobile */
+  gap: 10px;
+}
+
+.navbar-kiri {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 55px;
+  width: 100px;
+  object-fit: contain;
+}
+
+.teks-putih {
+  color: #ffffff;
+  font-size: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+}
+
+.teks-hijau {
+  color: #7cb342;
+  font-size: 20px;
+}
+
+/* Menu tengah */
+.navbar-tengah {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar-tengah a {
+  text-decoration: none;
+  color: #2b2b2b;
+  font-size: 15px;
+  font-weight: 500;
+  padding-bottom: 4px;
+  transition: 0.3s;
+}
+
+.navbar-tengah a:hover,
+.navbar-tengah a.aktif {
+  color: #4a7c1f;
+  border-bottom: 2px solid #4a7c1f;
+}
+
+/* Ikon kanan */
+.navbar-kanan {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ikon {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.ikon:hover {
+  background-color: rgba(255,255,255,0.5);
+}
+
+.tombol-masuk {
+  background-color: #ffffff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.tombol-masuk:hover {
+  background-color: #4a7c1f;
+  color: white;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  position: relative;
+  margin: 30px 60px;
+  border-radius: 25px;
+  overflow: hidden;
+  height: 480px;
+}
+
+.hero-gambar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85);
+}
+
+.hero-teks {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  width: 90%;
+  padding: 0 10px;
+}
+
+.hero-teks h1 {
+  font-size: 60px;
+  font-weight: 800;
+  line-height: 1.1;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+.hero-teks .hijau {
+  color: #c9f27b;
+}
+
+.hero-teks p {
+  margin: 20px 0 25px;
+  font-size: 16px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+.tombol-hero {
+  background-color: #e8f5c8;
+  color: #2b2b2b;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tombol-hero:hover {
+  background-color: #4a7c1f;
+  color: white;
+}
+
+/* ===== SECTION KARTU ===== */
+.kartu-wrapper {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  padding: 40px 60px 80px;
+  flex-wrap: wrap;
+}
+
+.kartu {
+  display: flex;
+  background-color: #d9e8b8;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 560px;
+  height: 260px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+
+.kartu:hover {
+  transform: translateY(-5px);
+}
+
+.kartu-gambar {
+  width: 45%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.kartu-gambar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kartu-isi {
+  width: 55%;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.label {
+  background-color: #c9f27b;
+  color: #2b2b2b;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 12px;
+  width: fit-content;
+}
+
+.kartu-isi h2 {
+  font-size: 24px;
+  margin-top: 8px;
+  color: #1f1f1f;
+}
+
+.kartu-isi p {
+  font-size: 13px;
+  color: #4a4a4a;
+  margin-top: 4px;
+}
+
+.kartu-bawah {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.harga {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2b2b2b;
+}
+
+.tombol-lingkaran {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #4a7c1f;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  flex-shrink: 0;
+}
+
+.tombol-lingkaran:hover {
+  background-color: #2f5410;
+  transform: scale(1.1);
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 12px 20px;
+  }
+
+  .navbar-tengah {
+    gap: 18px;
+  }
+
+  .hero {
+    margin: 20px 30px;
+    height: 420px;
+  }
+
+  .hero-teks h1 {
+    font-size: 48px;
+  }
+
+  .kartu-wrapper {
+    padding: 30px 30px 60px;
+    gap: 20px;
+  }
+
+  .kartu {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+    justify-content: space-between;
+  }
+
+  /* Sembunyikan menu tengah, ganti dengan tampilan lebih sederhana */
+  .navbar-tengah {
+    display: none;
+  }
+
+  .logo {
+    height: 45px;
+    width: 80px;
+  }
+
+  .teks-putih,
+  .teks-hijau {
+    font-size: 16px;
+  }
+
+  .ikon {
+    font-size: 16px;
+    padding: 4px;
+  }
+
+  .tombol-masuk {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+
+  .hero {
+    margin: 15px;
+    height: 380px;
+    border-radius: 18px;
+  }
+
+  .hero-teks h1 {
+    font-size: 32px;
+  }
+
+  .hero-teks p {
+    font-size: 14px;
+    margin: 15px 0 20px;
+  }
+
+  .tombol-hero {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .kartu-wrapper {
+    padding: 20px 15px 50px;
+    gap: 18px;
+  }
+
+  .kartu {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .kartu-gambar,
+  .kartu-isi {
+    width: 100%;
+  }
+
+  .kartu-gambar {
+    height: 180px;
+  }
+
+  .kartu-isi {
+    padding: 18px;
+  }
+
+  .kartu-isi h2 {
+    font-size: 20px;
+  }
+}
+
+/* Mobile kecil */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 8px 12px;
+  }
+
+  .logo {
+    height: 38px;
+    width: 65px;
+  }
+
+  .teks-putih,
+  .teks-hijau {
+    font-size: 14px;
+  }
+
+  .tombol-masuk {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+
+  .hero {
+    height: 320px;
+    margin: 12px;
+  }
+
+  .hero-teks h1 {
+    font-size: 26px;
+  }
+
+  .hero-teks p {
+    font-size: 12px;
+  }
+
+  .kartu-gambar {
+    height: 150px;
+  }
+
+  .kartu-isi h2 {
+    font-size: 18px;
+  }
+
+  .kartu-isi p {
+    font-size: 12px;
+  }
+
+  .tombol-lingkaran {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+}

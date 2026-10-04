@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masuk - Healthy Bite</title>
+  <link rel="stylesheet" href="css/Login.css">
+</head>
+<body>
+
+  <div class="login-wrapper">
+
+    <!-- ========== KIRI: GAMBAR + TEKS ========== -->
+    <div class="login-kiri">
+
+       <!-- Tambahkan tag img ini sebagai background -->
+      <img src="asset/GambarHL.png" alt="Background" class="bg-gambar">
+
+      <!-- Logo di atas -->
+      <div class="login-logo">
+        <img src="asset/Logo.png" alt="Healthy Bite">
+        <span class="logo-teks">HEALTHY<span class="hijau">BITE</span></span>
+      </div>
+
+      <!-- Teks utama -->
+      <div class="login-teks">
+        <p class="kecil">Pertumbuhan <span class="hijau">otot</span> yang baik, hati jadi senang</p>
+        <h1>
+          Makan lebih baik,<br>
+          hidup lebih <span class="hijau">berarti.</span>
+        </h1>
+        <p class="deskripsi">
+          Temukan menu sehat, pantau nutrisi, dan raih targetmu bersama
+          ahli gizi terpercaya.
+        </p>
+      </div>
+    </div>
+
+    <!-- ========== KANAN: FORM LOGIN ========== -->
+    <div class="login-kanan">
+
+      <!-- Tombol kembali -->
+      <a href="index.html" class="tombol-kembali">← kembali</a>
+
+      <div class="form-wrapper">
+        <p class="selamat">SELAMAT DATANG KEMBALI</p>
+        <h2>Masukkan Akun Anda</h2> 
+        <p class="sub">Lanjutkan perjalanan sehatmu bersama HealtyBite.</p>
+
+        <form action="#" method="POST">
+
+          <!-- Username -->
+          <label for="username">Username/Email</label>
+          <div class="input-grup">
+            <span class="ikon-input">✉️</span>
+            <input type="text" id="username" placeholder="Username/Email" required>
+          </div>
+
+          <!-- Password -->
+          <label for="password">Password</label>
+          <div class="input-grup">
+            <span class="ikon-input">🔒</span>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="button" class="lihat-sandi" onclick="togglePassword()">👁️</button>
+          </div>
+
+          <!-- Ingat saya & lupa sandi -->
+          <div class="baris-opsi">
+            <label class="ingat">
+              <input type="checkbox"> Ingat Saya
+            </label>
+            <a href="#" class="lupa">Lupa kata sandi?</a>
+          </div>
+
+          <!-- Tombol masuk -->
+          <button type="submit" class="tombol-login">Masuk &gt;</button>
+
+          <p class="belum-punya">
+            Belum punya akun? <a href="Register.html">Buat akun</a>
+          </p>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Script kecil untuk show/hide password -->
+  <script>
+    function togglePassword() {
+      const pw = document.getElementById('password');
+      pw.type = pw.type === 'password' ? 'text' : 'password';
+    }
+  </script>
+
+</body>
+</html>

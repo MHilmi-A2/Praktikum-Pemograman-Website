@@ -1,0 +1,420 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ===== WRAPPER UTAMA ===== */
+.login-wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+/* ========== KIRI ========== */
+.login-kiri {
+  flex: 1;
+  position: relative;
+  padding: 60px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.login-kiri .bg-gambar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.login-kiri::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(120, 160, 90, 0.4), rgba(80, 120, 60, 0.55));
+  z-index: 1;
+}
+
+.login-kiri > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Logo */
+.login-logo {
+  position: absolute;
+  top: 40px;
+  left: 30%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 2;
+}
+
+.login-logo img {
+  height: 80px;
+  max-width: 120px;
+  object-fit: contain;
+}
+
+.login-logo .logo-teks {
+  font-family: 'Arial Black', sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.login-logo .hijau {
+  color: #c9f27b;
+  margin-left: 5px;
+}
+
+/* Teks utama */
+.login-teks .kecil {
+  font-size: 13px;
+  margin-bottom: 15px;
+  color: #eaf5c8;
+}
+
+.login-teks .kecil .hijau {
+  color: #c9f27b;
+  font-weight: bold;
+}
+
+.login-teks h1 {
+  font-size: 58px;
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+}
+
+.login-teks h1 .hijau {
+  color: #c9f27b;
+  font-style: italic;
+}
+
+.login-teks .deskripsi {
+  font-size: 14px;
+  max-width: 340px;
+  line-height: 1.6;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+/* ========== KANAN ========== */
+.login-kanan {
+  flex: 1;
+  background-color: #f4f8ec;
+  padding: 40px 70px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tombol-kembali {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  text-decoration: none;
+  color: #2b2b2b;
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.tombol-kembali:hover {
+  color: #4a7c1f;
+}
+
+/* Form */
+.form-wrapper {
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.selamat {
+  color: #6ba03a;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.form-wrapper h2 {
+  font-size: 36px;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.form-wrapper .sub {
+  font-size: 13px;
+  color: #6b6b6b;
+  margin-bottom: 35px;
+}
+
+form label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2b2b2b;
+  margin-bottom: 8px;
+  margin-top: 18px;
+}
+
+.input-grup {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 0 15px;
+  border: 1px solid #e6e6e6;
+  transition: 0.3s;
+}
+
+.input-grup:focus-within {
+  border-color: #7cb342;
+  box-shadow: 0 0 0 3px rgba(124, 179, 66, 0.15);
+}
+
+.ikon-input {
+  font-size: 15px;
+  color: #9a9a9a;
+  margin-right: 10px;
+}
+
+.input-grup input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 14px 0;
+  font-size: 14px;
+  background: transparent;
+  color: #2b2b2b;
+  min-width: 0; /* penting agar input tidak overflow */
+}
+
+.lihat-sandi {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.6;
+}
+
+.baris-opsi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 18px 0 25px;
+  font-size: 13px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ingat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2b2b2b;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.ingat input {
+  width: 16px;
+  height: 16px;
+  accent-color: #7cb342;
+  cursor: pointer;
+}
+
+.lupa {
+  color: #4a7c1f;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.lupa:hover {
+  text-decoration: underline;
+}
+
+.tombol-login {
+  width: 100%;
+  background-color: #7cb342;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tombol-login:hover {
+  background-color: #5e8e2c;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(124, 179, 66, 0.3);
+}
+
+.belum-punya {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 13px;
+  color: #4a4a4a;
+}
+
+.belum-punya a {
+  color: #4a7c1f;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.belum-punya a:hover {
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .login-kiri {
+    padding: 40px;
+  }
+
+  .login-teks h1 {
+    font-size: 44px;
+  }
+
+  .login-kanan {
+    padding: 40px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  body {
+    overflow-y: auto; /* izinkan scroll di mobile */
+    height: auto;
+  }
+
+  .login-wrapper {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .login-kiri {
+    min-height: 280px;
+    padding: 30px 25px;
+    justify-content: flex-end;
+  }
+
+  .login-logo {
+    top: 20px;
+    left: 20px;
+  }
+
+  .login-logo img {
+    height: 50px;
+  }
+
+  .login-logo .logo-teks {
+    font-size: 15px;
+  }
+
+  .login-teks .kecil,
+  .login-teks .deskripsi {
+    display: none;
+  }
+
+  .login-teks h1 {
+    font-size: 32px;
+    margin-bottom: 0;
+  }
+
+  .login-kanan {
+    padding: 40px 25px 60px;
+    flex: none;
+  }
+
+  .tombol-kembali {
+    top: 20px;
+    left: 20px;
+    color: white;
+    z-index: 10;
+  }
+
+  .form-wrapper h2 {
+    font-size: 26px;
+  }
+}
+
+/* Mobile kecil */
+@media (max-width: 480px) {
+  .login-kiri {
+    min-height: 220px;
+    padding: 20px 18px;
+  }
+
+  .login-logo {
+    top: 15px;
+    left: 15px;
+  }
+
+  .login-logo img {
+    height: 40px;
+  }
+
+  .login-teks h1 {
+    font-size: 26px;
+  }
+
+  .login-kanan {
+    padding: 30px 18px 50px;
+  }
+
+  .form-wrapper h2 {
+    font-size: 22px;
+  }
+
+  .form-wrapper .sub {
+    font-size: 12px;
+    margin-bottom: 25px;
+  }
+
+  .input-grup input {
+    padding: 12px 0;
+    font-size: 13px;
+  }
+
+  .baris-opsi {
+    font-size: 12px;
+  }
+
+  .tombol-login {
+    padding: 13px;
+    font-size: 14px;
+  }
+
+  .belum-punya {
+    font-size: 12px;
+  }
+}
